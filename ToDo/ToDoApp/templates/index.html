@@ -17,15 +17,16 @@
                 <h3><i>ToDoApp</i></h3>
             </div>
             <div class="card-body">
-                <form>
+                <form action="addToDo" method="POST">
+                    {% csrf_token %}
                     <div class="form-group">
                       <label for="Title"><i class="fas fa-signature"></i><i> Title</i></label>
-                      <input type="text" class="form-control" id="Title">
+                      <input type="text" class="form-control" name="Title" id="Title" autocomplete="off">
                     </div>
                     <br/>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1"><i class="fas fa-signature"></i><i> Description</i></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                        <label for="Description"><i class="fas fa-signature"></i><i> Description</i></label>
+                        <textarea class="form-control" name="Description" id="Description" rows="2"></textarea>
                     </div>
                     <br/>
                     <div style="text-align: right;">
