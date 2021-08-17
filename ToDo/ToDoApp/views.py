@@ -5,7 +5,8 @@ from .models import ToDoApp
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    todo = ToDoApp.objects.all()
+    return render(request, 'index.html', {'todo': todo})
 
 def addToDo(request):
     if request.method == 'GET':
@@ -18,3 +19,17 @@ def addToDo(request):
         newToDoAppList.save()
 
         return redirect('/')
+
+def updateToDo(request, ID):
+    todo = ToDoApp.objects.filter(id = ID).first()
+    todo.isComplated = not todo.isComplated
+    todo.save()
+
+    return redirect('/')
+
+
+def deleteToDo(request, ID):
+    todo = ToDoApp.objects.filter(id = ID)
+    todo.delete()
+
+    return redirect('/')
