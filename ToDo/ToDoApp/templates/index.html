@@ -21,12 +21,12 @@
                     {% csrf_token %}
                     <div class="form-group">
                       <label for="Title"><i class="fas fa-signature"></i><i> Title</i></label>
-                      <input type="text" class="form-control" name="Title" id="Title" autocomplete="off" maxlength="25">
+                      <input type="text" class="form-control" name="Title" id="Title" autocomplete="off" maxlength="25" required="true">
                     </div>
                     <br/>
                     <div class="form-group">
                         <label for="Description"><i class="fas fa-signature"></i><i> Description</i></label>
-                        <textarea class="form-control" name="Description" id="Description" rows="2" maxlength="50"></textarea>
+                        <textarea class="form-control" name="Description" id="Description" rows="2" maxlength="50" required="true"></textarea>
                     </div>
                     <br/>
                     <div style="text-align: right;">
